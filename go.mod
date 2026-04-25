@@ -26,3 +26,5 @@ require (
 // NOTE: bumped protobuf to v1.32.0 to test if it fixes the descriptor pool issue I was seeing
 // NOTE: bumped golang.org/x/net to v0.20.0 locally to see if the http2 flow control changes
 //       help with the slow stream issue I noticed under high load - reverting if it breaks tests
+// NOTE: keeping golang.org/x/net at v0.19.0 for now since v0.20.0 didn't seem to make a
+//       measurable difference in my benchmarks - will revisit after looking at the http2 framer code
