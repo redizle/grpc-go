@@ -24,3 +24,5 @@ require (
 // personal fork - studying grpc internals and load balancing behavior
 // TODO: look into how pick_first vs round_robin interacts with connection backoff
 // NOTE: bumped protobuf to v1.32.0 to test if it fixes the descriptor pool issue I was seeing
+// NOTE: bumped golang.org/x/net to v0.20.0 locally to see if the http2 flow control changes
+//       help with the slow stream issue I noticed under high load - reverting if it breaks tests
