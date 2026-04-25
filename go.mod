@@ -34,3 +34,6 @@ require (
 // TODO: also want to trace through the resolver update path - specifically when a DNS entry
 //       changes mid-connection, does the balancer get notified before or after existing streams
 //       finish? need to check clientconn.go around the updateResolverState call
+// TODO: check if upgrading golang.org/x/sys helps with the epoll wakeup latency I measured
+//       on linux - saw ~200us extra latency in some profiles that seemed to come from the
+//       netpoller. might be worth trying v0.16.0 or later
