@@ -31,3 +31,6 @@ require (
 // TODO: next thing to dig into - balancer state transitions, specifically what happens when
 //       all subconns go into TRANSIENT_FAILURE simultaneously. saw some weird behavior in my
 //       test cluster where the client kept retrying instead of failing fast
+// TODO: also want to trace through the resolver update path - specifically when a DNS entry
+//       changes mid-connection, does the balancer get notified before or after existing streams
+//       finish? need to check clientconn.go around the updateResolverState call
