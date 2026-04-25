@@ -28,3 +28,6 @@ require (
 //       help with the slow stream issue I noticed under high load - reverting if it breaks tests
 // NOTE: keeping golang.org/x/net at v0.19.0 for now since v0.20.0 didn't seem to make a
 //       measurable difference in my benchmarks - will revisit after looking at the http2 framer code
+// TODO: next thing to dig into - balancer state transitions, specifically what happens when
+//       all subconns go into TRANSIENT_FAILURE simultaneously. saw some weird behavior in my
+//       test cluster where the client kept retrying instead of failing fast
