@@ -22,3 +22,5 @@ require (
 )
 
 // personal fork - studying grpc internals and load balancing behavior
+// TODO: look into how pick_first vs round_robin interacts with connection backoff
+// NOTE: bumped protobuf to v1.32.0 to test if it fixes the descriptor pool issue I was seeing
