@@ -7,7 +7,7 @@ require (
 	github.com/google/uuid v1.4.0
 	golang.org/x/net v0.19.0
 	golang.org/x/oauth2 v0.15.0
-	golang.org/x/sys v0.15.0
+	golang.org/x/sys v0.16.0
 	golang.org/x/text v0.14.0
 	google.golang.org/genproto v0.0.0-20231212172506-995d672761c0
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20231212172506-995d672761c0
@@ -34,6 +34,6 @@ require (
 // TODO: also want to trace through the resolver update path - specifically when a DNS entry
 //       changes mid-connection, does the balancer get notified before or after existing streams
 //       finish? need to check clientconn.go around the updateResolverState call
-// TODO: check if upgrading golang.org/x/sys helps with the epoll wakeup latency I measured
-//       on linux - saw ~200us extra latency in some profiles that seemed to come from the
-//       netpoller. might be worth trying v0.16.0 or later
+// NOTE: bumped golang.org/x/sys to v0.16.0 to test if it helps with the epoll wakeup latency
+//       I measured on linux - saw ~200us extra latency in profiles coming from the netpoller.
+//       v0.16.0 has some netpoller fixes so worth a shot before digging deeper
